@@ -1,22 +1,19 @@
-import Home from "../Home";
-import MyAccount from "../MyAccount";
-import SignIn from "../SignIn";
-import NotFound from "../NotFound";
+import {BrowserRouter} from "react-router-dom";
+
 import '../../App.css';
-import MyOrder from "../MyOrder";
 
-function App() {
+import Routes from "../../Routes.jsx";
 
+import NavBar from "../../Components/Navbar/Navbar.jsx";
 
+const App = () => {
     return (
         <>
-            <div className="bg-red-100">
-                <Home/>
-                <MyAccount/>
-                <MyOrder/>
-                <SignIn/>
-                <NotFound/>
-            </div>
+
+            <BrowserRouter>
+                <NavBar/>
+                <Routes/>
+            </BrowserRouter>
         </>
     )
 }
