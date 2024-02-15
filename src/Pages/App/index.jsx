@@ -1,13 +1,16 @@
 import {BrowserRouter} from "react-router-dom";
 
-import Routes from "../../Routes.jsx";
-
 import '../../App.css';
+
+import Routes from "../../Routes.jsx";
+import Navbar from "../../Components/Navbar/Navbar.jsx";
 
 const App = () => {
     return (
         <>
+
             <BrowserRouter>
+                <Navbar/>
                 <Routes/>
             </BrowserRouter>
         </>
