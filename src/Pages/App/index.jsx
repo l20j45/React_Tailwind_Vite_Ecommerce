@@ -3,14 +3,15 @@ import {BrowserRouter} from "react-router-dom";
 import '../../App.css';
 
 import Routes from "../../Routes.jsx";
-import Navbar from "../../Components/Navbar/Navbar.jsx";
+
+import NavBar from "../../Components/Navbar/Navbar.jsx";
 
 const App = () => {
     return (
         <>
 
             <BrowserRouter>
-                <Navbar/>
+                <NavBar/>
                 <Routes/>
             </BrowserRouter>
         </>

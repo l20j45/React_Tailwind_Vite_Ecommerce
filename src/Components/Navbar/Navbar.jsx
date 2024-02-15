@@ -1,108 +1,108 @@
-import { NavLink } from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
-const Navbar = () => {
-    const activeStyle = 'underline underline-offset-4'
+let menu1 = [
+    {
+        to: '/',
+        text: 'Shopi',
+        className: 'font-semibold text-lg'
+    },
+    {
+        to: '/',
+        text: 'All',
+        className: ''
+    },
+    {
+        to: '/clothes',
+        text: 'clothes',
+        className: ''
+    },
+    {
+        to: '/electronics',
+        text: 'electronics',
+        className: ''
+    },
+    {
+        to: '/furnitures',
+        text: 'furnitures',
+        className: ''
+    },
+    {
+        to: '/toys',
+        text: 'toys',
+        className: ''
+    },
+    {
+        to: '/others',
+        text: 'others',
+        className: ''
+    },
+]
 
+let menu2 = [
+    {
+        to: '/email',
+        text: 'juanmer382@gmail.com',
+        className: 'text-black/60'
+    },
+    {
+        to: '/myorders',
+        text: 'My orders',
+        className: ''
+    },
+    {
+        to: '/myoccount',
+        text: 'My occount',
+        className: ''
+    },
+    {
+        to: '/signin',
+        text: 'Sign in',
+        className: ''
+    },
+    {
+        to: '/shoppcar',
+        text: '🛒',
+        className: ''
+    },
+]
+
+const NavBar = () => {
+    const textDecoration = 'underline underline-offset-4'
     return (
-        <nav className='flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light'>
-            <ul className='flex items-center gap-3'>
-                <li className='font-semibold text-lg'>
-                    <NavLink to='/'>
-                        Shopi
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to='/'
-                        className={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                        }>
-                        All
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to='/clothes'
-                        className={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                        }>
-                        Clothes
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to='/electronics'
-                        className={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                        }>
-                        Electronics
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to='/furnitures'
-                        className={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                        }>
-                        Furnitures
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to='/toys'
-                        className={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                        }>
-                        Toys
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to='/others'
-                        className={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                        }>
-                        Others
-                    </NavLink>
-                </li>
+        <nav className="flex items-center justify-between fixed z-10 w-full py-5 px-8 text-sm font-light">
+            <ul className='flex gap-3 items-center'>
+                {menu1.map(link => (
+                    <li
+                        key={link.text}
+                        className={link.className}
+                    >
+                        <NavLink
+                            to={link.to}
+                            className={({isActive}) => isActive ? textDecoration : undefined}
+                        >
+                            {link.text}
+                        </NavLink>
+                    </li>
+                ))}
             </ul>
-            <ul className='flex items-center gap-3'>
-                <li className='text-black/60'>
-                    teff@platzi.com
-                </li>
-                <li>
-                    <NavLink
-                        to='/my-orders'
-                        className={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                        }>
-                        My Orders
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to='/my-account'
-                        className={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                        }>
-                        My Account
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to='/sing-in'
-                        className={({ isActive }) =>
-                            isActive ? activeStyle : undefined
-                        }>
-                        Sign In
-                    </NavLink>
-                </li>
-                <li>
-                    🛒 0
-                </li>
+            <ul className='flex gap-3 items-center'>
+                {menu2.map(link => (
+                    <li
+                        key={link.text}
+                        className={link.className}
+                    >
+                        <NavLink
+                            to={link.to}
+                            className={({isActive}) => isActive ? textDecoration : undefined}
+                        >
+                            {link.text}
+                        </NavLink>
+                    </li>
+                ))}
             </ul>
         </nav>
     )
 }
 
-export default Navbar
+
+export default NavBar
