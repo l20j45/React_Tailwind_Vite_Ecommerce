@@ -5,6 +5,7 @@ import '../../App.css';
 import Routes from "../../Routes.jsx";
 
 import NavBar from "../../Components/Navbar/Navbar.jsx";
+import Layout from "../../Components/Layout/index.jsx";
 
 const App = () => {
     return (
@@ -12,7 +13,10 @@ const App = () => {
 
             <BrowserRouter>
                 <NavBar/>
-                <Routes/>
+                <Layout>
+                    <Routes/>
+                </Layout>
+
             </BrowserRouter>
         </>
     )
