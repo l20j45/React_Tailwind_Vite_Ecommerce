@@ -1,11 +1,9 @@
+import Card from "../../Components/Card/index.jsx";
+
 function Home() {
 
     return (
-        <>
-            <div className="bg-red-100">
-                Hola bebe2
-            </div>
-        </>
+<Card/>
     )
 }
 
