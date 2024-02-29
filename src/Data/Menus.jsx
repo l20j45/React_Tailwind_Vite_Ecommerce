@@ -58,7 +58,7 @@ const menu2 = [
         className: ''
     },
     {
-        to: '/shoppcar',
+        to: '/cart',
         text: '🛒',
         className: ''
     },

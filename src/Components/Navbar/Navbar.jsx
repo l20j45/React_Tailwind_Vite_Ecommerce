@@ -1,8 +1,11 @@
 import {NavLink} from 'react-router-dom'
 import {menu1,menu2} from "../../Data/Menus.jsx";
+import {useContext} from "react";
+import {ShoppingCartContext} from "../../Context/index.jsx";
 
 const NavBar = () => {
     const textDecoration = 'underline underline-offset-4'
+    const context = useContext(ShoppingCartContext)
     return (
         <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light'>
             <ul className='flex gap-3 items-center'>
@@ -20,7 +23,7 @@ const NavBar = () => {
                     </li>
                 ))}
             </ul>
-            <ul className='flex gap-3 items-center'>
+            <ul className='flex gap-3 items-center me-20'>
                 {menu2.map(link => (
                     <li
                         key={link.text}
@@ -30,7 +33,7 @@ const NavBar = () => {
                             to={link.to}
                             className={({isActive}) => isActive ? textDecoration : undefined}
                         >
-                            {link.text}
+                            {link.to === '/cart' ? `${link.text} ${context.count}` : link.text}
                         </NavLink>
                     </li>
                 ))}
