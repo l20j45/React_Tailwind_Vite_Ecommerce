@@ -7,7 +7,7 @@ function Home() {
     const items = GetProducts();
     return (
 
-        <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
+        <div className='grid gap-4  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 w-full max-w-screen-lg px-2'>
             {
                 items?.map(item => (
                     <Card key={item.id} data={item}/>
