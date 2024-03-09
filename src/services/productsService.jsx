@@ -1,12 +1,15 @@
 import {useEffect, useState} from "react";
-import {Api} from "../enviroments/test.js";
+import {Api, Api2} from "../enviroments/devApi.jsx";
 
 export const GetProducts = () => {
     const [data, setData] = useState(null);
     useEffect(() => {
-        fetch(`${Api}/products`)
+        fetch(`${Api2}/products`)
             .then(res => res.json())
-            .then(data => setData(data))
+            .then(data => {
+                setData(data);
+
+            })
             .catch(err => {
                 console.log('caught it!', err);
             });
